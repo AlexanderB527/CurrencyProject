@@ -17,7 +17,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>com.javatpoint.DollarRateServer</mainClass>
+                            <mainClass>DollarRateServer</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
