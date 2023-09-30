@@ -4,7 +4,9 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import org.json.JSONObject;
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+
 import java.math.BigDecimal;
 
 class CurrencyConverter {
@@ -48,10 +50,10 @@ class CurrencyConverter {
 
     public static class CurrencyParser {
 
-        public static String parser(String response, String request)
-        {
-            JSONObject jsonObject = new JSONObject(response);
-            BigDecimal rubRate = jsonObject.getJSONObject("rates").getBigDecimal("RUB");
+        public static String parser(String response, String request) {
+            Gson gson = new Gson();
+            JsonObject jsonObject = gson.fromJson(response, JsonObject.class);
+            BigDecimal rubRate = new BigDecimal(jsonObject.getAsJsonObject("rates").get("RUB").getAsString());
             return rubRate.toString();
         }
     }
