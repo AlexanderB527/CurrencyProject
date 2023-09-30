@@ -41,7 +41,7 @@ public class DollarRateServer {
                 System.out.println(currency);
 
                 // Здесь API для получения актуального курса валют относительно рубля
-                String filePath = "C:\\Users\\Alexander\\IdeaProjects\\ParserMoney\\src\\main\\java\\Currency_codes"; // путь к файлу
+                String filePath = "src/main/java/Currency_codes"; // путь к файлу
 
                 boolean isStringExists = CurrencyConverter.FileStringExistenceChecker.checkStringExistence(filePath, currency);
                 if (isStringExists) {
